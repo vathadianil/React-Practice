@@ -2,8 +2,9 @@
   "name": "namsthe-react",
   "version": "1.0.0",
   "description": "Namasthe React by Akshay Saini",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "keywords": [],
