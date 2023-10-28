@@ -23,11 +23,15 @@
 */
 
 const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "chil1" }, [
+  React.createElement("div", { id: "child1" }, [
     React.createElement("h1", { id: "heading" }, "Hello world"),
     React.createElement("h3", { id: "subheading" }, "Sub Heading"),
   ]),
-  React.createElement("div", { id: "chil2" }, [
+  React.createElement("div", { id: "child2" }, [
+    React.createElement("h1", { id: "heading" }, "Hello world2"),
+    React.createElement("h3", { id: "subheading" }, "Sub Heading2"),
+  ]),
+  React.createElement("div", { id: "child3" }, [
     React.createElement("h1", { id: "heading" }, "Hello world2"),
     React.createElement("h3", { id: "subheading" }, "Sub Heading2"),
   ]),
