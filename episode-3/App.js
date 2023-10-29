@@ -5,16 +5,20 @@ import image from "./asserts/newplot.png";
 //React Functional Component
 
 const HeadingComponent = () => {
-  return <h1 className="heading"> Welcome to React Functional Component </h1>;
+  return (
+    <>
+      <h1 className="heading">Welcome to React Functional Component</h1>;
+    </>
+  );
 };
 
 //React Element
 const containerElement = (
-  <>
+  <div>
     <h1 className="heading">Welcome to React from JSX</h1>
     <img src={image} />
     <HeadingComponent />
-  </>
+  </div>
 );
 const number = 1000;
 //React Functional Component
@@ -25,6 +29,7 @@ const ContainerComponent = () => (
     <span style={{ display: "block" }}> {number}</span>
     <span style={{ display: "block" }}> {containerElement}</span>
     <HeadingComponent />
+    {HeadingComponent()}
   </>
 );
 
