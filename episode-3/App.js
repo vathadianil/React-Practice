@@ -1,6 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import image from "./asserts/newplot.png";
 
-const heading = <h1 className="heading"> Welcome to React from JSX</h1>;
+//React Functional Component
+
+const HeadingComponent = () => {
+  return <h1 className="heading"> Welcome to React Functional Component </h1>;
+};
+
+const container = (
+  <>
+    <h1 className="heading">Welcome to React from JSX</h1>
+    <img src={image} />
+    <HeadingComponent />
+  </>
+);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(container);
