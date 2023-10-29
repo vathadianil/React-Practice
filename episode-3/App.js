@@ -9,20 +9,21 @@ const HeadingComponent = () => {
 };
 
 //React Element
-// const container =  (
-//   <>
-//     <h1 className="heading">Welcome to React from JSX</h1>
-//     <img src={image} />
-//     <HeadingComponent />
-//   </>
-// );
-const number = 1000;
-//React Functional Component
-const Container = () => (
+const containerElement = (
   <>
     <h1 className="heading">Welcome to React from JSX</h1>
     <img src={image} />
-    {number}
+    <HeadingComponent />
+  </>
+);
+const number = 1000;
+//React Functional Component
+const ContainerComponent = () => (
+  <>
+    <h1 className="heading">Welcome to React from JSX</h1>
+    <img src={image} />
+    <span style={{ display: "block" }}> {number}</span>
+    <span style={{ display: "block" }}> {containerElement}</span>
     <HeadingComponent />
   </>
 );
@@ -33,4 +34,4 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(container);
 
 //Rendering using React component
-root.render(<Container />);
+root.render(<ContainerComponent />);
