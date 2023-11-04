@@ -23,16 +23,34 @@ const HeaderComponent = () => {
 };
 
 const RestaurantCard = ({ restaurant }) => {
-  console.log(restaurant);
-  const { cloudinaryImageId, name, avgRatingString, sla, cuisines, areaName } =
-    restaurant.info;
+  const {
+    cloudinaryImageId,
+    name,
+    avgRatingString,
+    sla,
+    cuisines,
+    areaName,
+    aggregatedDiscountInfoV3,
+  } = restaurant.info;
 
   return (
     <div className="res-card">
-      <img
+      <div
+        className="res-image"
+        style={{
+          backgroundImage: `url(
+            https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}
+          )`,
+        }}
+      >
+        <h3 className="res-image-title">
+          {aggregatedDiscountInfoV3.header} {aggregatedDiscountInfoV3.subHeader}
+        </h3>
+      </div>
+      {/* <img
         className="res-image"
         src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
-      />
+      /> */}
       <h4 className="res-card-title">
         {name.length > 20 ? name.substring(0, 20) + "..." : name}
       </h4>

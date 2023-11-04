@@ -56,6 +56,12 @@ body {
 
 .res-card {
   width: 100%;
+  cursor: pointer;
+  transition: transform 100ms ease-in-out;
+}
+
+.res-card:hover {
+  transform: scale(0.9);
 }
 
 .res-card-title {
@@ -65,10 +71,22 @@ body {
 }
 
 .res-image {
-  width: 240px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 1em;
+  background-size: cover;
+  border-radius: 0.7em;
+  padding-top: 7.5em;
+  text-align: center;
+  overflow: hidden;
+}
+
+.res-image-title {
+  color: #fff;
+  font-weight: 700;
+  padding-top: 0.5em;
+  background: linear-gradient(
+    hsl(0 0% 0% /0),
+    hsl(0 0% 0% /0.5) 40%,
+    hsl(0 0% 0% /1)
+  );
 }
 
 .star-icon {
