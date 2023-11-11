@@ -1,5 +1,6 @@
 import React from "react";
 import starIcon from "../../asserts/images/icons-star.png";
+import { CDN_URL } from "../utils/constants";
 
 function RestroCard({ restaurant }) {
   const {
@@ -18,7 +19,7 @@ function RestroCard({ restaurant }) {
         className="res-image"
         style={{
           backgroundImage: `url(
-                https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}
+                ${CDN_URL}${cloudinaryImageId}
               )`,
         }}
       >

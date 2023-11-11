@@ -1,6 +1,6 @@
 import React from "react";
 import RestroCard from "./RestroCard";
-import { resData } from "../../data";
+import { resData } from "../utils/mockData";
 function Body() {
   return (
     <div className="body">
