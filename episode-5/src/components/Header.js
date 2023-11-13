@@ -13,6 +13,7 @@ function Header() {
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
+          <button className="btn">Logout</button>
         </ul>
       </div>
     </div>

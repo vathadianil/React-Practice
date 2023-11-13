@@ -11,7 +11,7 @@ function RestroCard({ restaurant }) {
     cuisines,
     areaName,
     aggregatedDiscountInfoV3,
-  } = restaurant.info;
+  } = restaurant?.info;
 
   return (
     <div className="res-card">
@@ -24,7 +24,8 @@ function RestroCard({ restaurant }) {
         }}
       >
         <h3 className="res-image-title">
-          {aggregatedDiscountInfoV3.header} {aggregatedDiscountInfoV3.subHeader}
+          {aggregatedDiscountInfoV3?.header}{" "}
+          {aggregatedDiscountInfoV3?.subHeader}
         </h3>
       </div>
 
