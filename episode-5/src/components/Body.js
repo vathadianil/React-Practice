@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 import RestroCard from "./RestroCard";
 import ShimmerCard from "./ShimmerCard";
 import { SHIMMER_CARD_COUNT } from "../utils/constants";
+import SearchIcon from "../../asserts/images/search-icon.png";
 
 function Body() {
   const SHIMMER_CARD_ARRAY = [];
   const [restaurentList, setRestaurantList] = useState([]);
+  const [filteredRestaurant, setFilteredResturant] = useState([]);
+  const [searchText, setSearchText] = useState("");
+
   if (restaurentList.length === 0) {
     for (let i = 0; i < SHIMMER_CARD_COUNT; i++) {
       SHIMMER_CARD_ARRAY.push(i + 1);
@@ -26,18 +30,46 @@ function Body() {
       jsonResponse?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants
     );
+    setFilteredResturant(
+      jsonResponse?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants
+    );
   };
 
   return (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(event) => setSearchText(event.target.value)}
+          />
+          <button
+            className="btn"
+            onClick={() => {
+              const filteredRestaurantList = searchText
+                ? restaurentList.filter((item) =>
+                    item?.info?.name
+                      ?.toLowerCase()
+                      .includes(searchText.toLowerCase())
+                  )
+                : restaurentList;
+
+              setFilteredResturant(filteredRestaurantList);
+            }}
+          >
+            <img src={SearchIcon} className="search-icon" />
+          </button>
+        </div>
         <button
           className="btn"
           onClick={() => {
             const filteredRestaurantList = restaurentList.filter(
               (item) => item.info.avgRating >= 4
             );
-            setRestaurantList(filteredRestaurantList);
+            setFilteredResturant(filteredRestaurantList);
           }}
         >
           Top Rated Restaurants
@@ -51,7 +83,7 @@ function Body() {
         </div>
       ) : (
         <div className="res-container">
-          {restaurentList?.map((restaurant) => (
+          {filteredRestaurant?.map((restaurant) => (
             <RestroCard key={restaurant.info.id} restaurant={restaurant} />
           ))}
         </div>
