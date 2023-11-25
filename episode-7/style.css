@@ -72,6 +72,10 @@ body {
   font-weight: 400;
 }
 
+.nav-items > ul > li > a {
+  text-decoration: none;
+}
+
 .body {
   max-width: 1080px;
   margin-inline: auto;
