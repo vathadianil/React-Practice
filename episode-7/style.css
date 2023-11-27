@@ -198,3 +198,71 @@ body {
 .search-icon {
   width: 12px;
 }
+
+.res-desc {
+  margin-top: 2em;
+  padding: 1em;
+  border-top: 1px solid #e9e9eb;
+  border-bottom: 1px solid #e9e9eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.res-desc--title {
+  padding-bottom: 0.5em;
+}
+.res-desc--cuisine {
+  padding-bottom: 0.5em;
+  color: #82838f;
+}
+
+.res-desc--area {
+  padding-bottom: 1em;
+  color: #82838f;
+}
+
+.res-desc--delivery-message {
+  color: #82838f;
+  display: flex;
+  align-items: center;
+}
+
+.res-desc--delivery-message > img {
+  width: 30;
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.res-desc--right {
+  border: 1px solid #e9e9eb;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.res-desc--star {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e9e9eb;
+  padding-bottom: 1em;
+}
+
+.res-desc--star > img {
+  width: 20px;
+  margin-right: 0.5em;
+}
+
+.res-desc--star > h3 {
+  color: #1fb141;
+}
+
+.res-desc--total-rating {
+  color: #82838f;
+  padding: 1em 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
