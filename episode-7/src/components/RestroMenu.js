@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { SHIMMER_CARD_COUNT } from "../utils/constants";
+import { RESTRO_MENU_URL, SHIMMER_CARD_COUNT } from "../utils/constants";
 import ShimmerCard from "./ShimmerCard";
 import RestroMenuHeader from "./RestroMenuHeader";
 import RestroMenuBody from "./RestroMenuBody";
+import { useParams } from "react-router-dom";
 
 const RestroMenu = () => {
+  const { resId } = useParams();
   const SHIMMER_CARD_ARRAY = [];
   const [resInfo, setResInfo] = useState([]);
   if (resInfo.length === 0) {
@@ -16,7 +18,7 @@ const RestroMenu = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.385044&lng=78.486671&restaurantId=109168&catalog_qa=undefined&submitAction=ENTER"
+      `${RESTRO_MENU_URL}?page-type=REGULAR_MENU&complete-menu=true&lat=17.385044&lng=78.486671&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
     );
     const json = await data.json();
     setResInfo(() => json);

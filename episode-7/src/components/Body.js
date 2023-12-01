@@ -4,6 +4,7 @@ import RestroCard from "./RestroCard";
 import ShimmerCard from "./ShimmerCard";
 import { SHIMMER_CARD_COUNT } from "../utils/constants";
 import SearchIcon from "../../asserts/images/search-icon.png";
+import { Link } from "react-router-dom";
 
 function Body() {
   const SHIMMER_CARD_ARRAY = [];
@@ -84,7 +85,13 @@ function Body() {
       ) : (
         <div className="res-container">
           {filteredRestaurant?.map((restaurant) => (
-            <RestroCard key={restaurant.info.id} restaurant={restaurant} />
+            <Link
+              className="res-container-link"
+              key={restaurant.info.id}
+              to={`/restaurant/${restaurant.info.id}`}
+            >
+              <RestroCard restaurant={restaurant} />
+            </Link>
           ))}
         </div>
       )}

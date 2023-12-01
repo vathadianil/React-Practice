@@ -148,6 +148,11 @@ body {
   margin: 0.5em 0;
 }
 
+.res-container-link {
+  text-decoration: none;
+  color: #000;
+}
+
 .res-card-title,
 .star-icon,
 .cuisone-container,
