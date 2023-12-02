@@ -271,3 +271,52 @@ body {
   font-weight: 500;
   font-size: 0.9rem;
 }
+
+.accordion-list {
+  list-style: none;
+  width: 100%;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 0.5em;
+  box-shadow: 0 0.3em 0.7em 0 rgba(0, 0, 0, 0.2),
+    0 0.3em 1em 0 rgba(0, 0, 0, 0.19);
+}
+
+.accordion-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.accordion-caret {
+  width: 1em;
+  transform: rotate(180deg);
+  transition: transform 300ms ease-in;
+}
+
+.acoordion-input[type="radio"] {
+  display: none;
+}
+
+.accordion-content-container {
+  padding: 0 0.5em;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-in;
+}
+
+.accordion-content {
+  overflow: hidden;
+}
+
+.acoordion-input[type="radio"]:checked
+  + .accordion-label
+  + .accordion-content-container {
+  grid-template-rows: 1fr;
+}
+
+.acoordion-input[type="radio"]:checked ~ .accordion-label > .accordion-caret {
+  transform: rotate(0deg) !important;
+}

@@ -29,7 +29,7 @@ const RestroMenu = () => {
   }, []);
 
   return resInfo.length === 0 ? (
-    <div className="res-container">
+    <div className="res-container body">
       {SHIMMER_CARD_ARRAY.map((item) => (
         <ShimmerCard key={item} />
       ))}
