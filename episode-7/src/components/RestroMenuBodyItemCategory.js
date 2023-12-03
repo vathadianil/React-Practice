@@ -1,14 +1,16 @@
 import RestroMenuBodyNestedCategory from "./RestroMenuBodyNestedCategory";
 import upArrow from "../../asserts/images/up-arrow.svg";
+import { useState } from "react";
 
 export default RestroMenuBodyItemCategory = ({ cardsData, cardsIndex }) => {
   const { itemCards, title } = cardsData;
+
   return (
     <div>
       <ul className="accordion">
         <li className="accordion-list">
           <input
-            type="radio"
+            type="checkbox"
             className="acoordion-input"
             name="accordion"
             id={cardsIndex}
